@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Portfolio | Vernexify Technologies</title>
+    <meta name="description" content="View the portfolio of Vernexify Technologies, showcasing custom Enterprise ERPs, AI cognitive agents, high-efficiency SaaS platforms, and mobile application designs."/>
+    
+    <!-- Google Fonts & Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS with custom configuration -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            "colors": {
+              "primary": "#2563eb",
+              "on-primary": "#ffffff",
+              "primary-container": "#eff6ff",
+              "on-primary-container": "#1e40af",
+              "secondary": "#0ea5e9",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#e0f2fe",
+              "on-secondary-container": "#0369a1",
+              "tertiary": "#7c3aed",
+              "on-tertiary": "#ffffff",
+              "tertiary-container": "#f5f3ff",
+              "on-tertiary-container": "#6d28d9",
+              "background": "#f8fafc",
+              "on-background": "#0f172a",
+              "surface": "#ffffff",
+              "surface-dim": "#f1f5f9",
+              "surface-bright": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f8fafc",
+              "surface-container": "#f1f5f9",
+              "surface-container-high": "#e2e8f0",
+              "surface-container-highest": "#cbd5e1",
+              "on-surface": "#0f172a",
+              "on-surface-variant": "#475569",
+              "outline": "#e2e8f0",
+              "outline-variant": "#cbd5e1",
+              "error": "#ef4444",
+              "on-error": "#ffffff",
+              "error-container": "#fee2e2"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "2xl": "1rem",
+              "3xl": "1.25rem",
+              "4xl": "1.5rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "xxl": "48px",
+              "section": "72px",
+              "unit": "4px",
+              "sm": "8px",
+              "margin-desktop": "64px",
+              "lg": "24px",
+              "margin-mobile": "16px",
+              "xs": "4px",
+              "xl": "32px",
+              "md": "16px",
+              "gutter": "24px"
+            },
+            "fontFamily": {
+              "headline-sm": ["Sora"],
+              "body-sm": ["Inter"],
+              "label-md": ["Inter"],
+              "headline-md": ["Sora"],
+              "body-lg": ["Inter"],
+              "display-hero": ["Sora"],
+              "body-md": ["Inter"],
+              "headline-lg": ["Sora"],
+              "display-hero-mobile": ["Sora"]
+            },
+            "fontSize": {
+              "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+              "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+              "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+              "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+              "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+              "display-hero": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+              "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+              "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+              "display-hero-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+    
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.04) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(124, 58, 237, 0.04) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.04) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(37, 99, 235, 0.02) 0px, transparent 50%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 30px rgba(15, 23, 42, 0.01), 0 1px 3px rgba(15, 23, 42, 0.01);
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+        }
+        .hover-card-primary:hover {
+            border-color: rgba(37, 99, 235, 0.25);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.06);
+        }
+        .hover-card-secondary:hover {
+            border-color: rgba(14, 165, 233, 0.25);
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.06);
+        }
+        .hover-card-tertiary:hover {
+            border-color: rgba(124, 58, 237, 0.25);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.06);
+        }
+        .accent-glow {
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+        }
+        .accent-glow:hover {
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+        }
+        .border-glass {
+            border: 1px solid rgba(15, 23, 42, 0.05);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased text-on-background bg-background">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/75 backdrop-blur-md border-b border-slate-200/50 shadow-sm shadow-slate-100/50 transition-all duration-300">
+        <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-md max-w-full mx-auto">
+            <div class="font-headline-sm text-headline-sm font-bold text-on-surface flex items-center gap-2">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/light-bg.png" class="h-16 w-auto block object-contain" style="mix-blend-mode: multiply;" alt="Vernexify Technologies Logo" />
+                </a>
+            </div>
+            <div class="hidden md:flex gap-xl items-center">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+                <a class="font-label-md text-label-md text-primary transition-colors font-bold" href="portfolio.html">Portfolio</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About Us</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Blog</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
+                <button onclick="window.location.href='contact.html'" class="ml-lg bg-gradient-to-r from-primary to-[#1d4ed8] text-white px-lg py-sm rounded-xl font-label-md hover:translate-y-[-2px] hover:scale-[1.02] active:scale-95 transition-all accent-glow">
+                    Get Free Consultation
+                </button>
+            </div>
+            <!-- Mobile Toggle -->
+            <button id="menu-btn" class="md:hidden p-1 rounded-lg text-on-surface hover:bg-slate-100 transition-colors focus:outline-none" aria-label="Toggle Menu">
+                <span class="material-symbols-outlined text-[28px] block">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-slate-900/30 backdrop-blur-sm transform translate-x-full transition-transform duration-300 md:hidden" aria-hidden="true">
+        <div class="absolute right-0 top-0 h-full w-72 bg-white shadow-2xl flex flex-col p-lg border-l border-slate-200/60">
+            <div class="flex justify-between items-center mb-xl">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/light-bg.png" class="h-20 w-auto block object-contain" style="mix-blend-mode: multiply;" style="mix-blend-mode: multiply;" alt="Vernexify Technologies Logo" />
+                </a>
+                <button id="close-menu-btn" class="p-1 rounded-lg text-on-surface-variant hover:text-primary hover:bg-slate-100 transition-colors focus:outline-none" aria-label="Close Menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="flex flex-col gap-md grow">
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="index.html">Home</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="services.html">Services</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-primary transition-colors py-sm border-b border-slate-100" href="portfolio.html">Portfolio</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="about.html">About Us</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="blog.html">Blog</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="contact.html">Contact</a>
+            </div>
+            <button onclick="window.location.href='contact.html'" class="bg-gradient-to-r from-primary to-[#1d4ed8] text-white px-lg py-md rounded-xl font-label-md hover:scale-[1.02] active:scale-95 transition-all accent-glow w-full mt-auto mb-md">
+                Get Free Consultation
+            </button>
+        </div>
+    </div>
+
+    <main class="relative pt-24">
+        <!-- Hero Section -->
+        <section class="py-xl px-margin-mobile md:px-margin-desktop text-center max-w-7xl mx-auto">
+            <span class="font-label-md text-primary uppercase tracking-widest font-bold block mb-2">Our Work</span>
+            <h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface mb-md bg-gradient-to-r from-primary via-tertiary to-secondary bg-clip-text text-transparent tracking-tight leading-tight">
+                Case Studies &amp; Projects
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+                Explore our track record of engineering successful custom platforms for global enterprises and scale-up companies.
+            </p>
+        </section>
+
+        <!-- Filters Section -->
+        <section class="py-sm px-margin-mobile md:px-margin-desktop flex justify-center gap-sm flex-wrap max-w-lg mx-auto mb-xl">
+            <button data-filter="all" class="filter-btn px-lg py-sm rounded-xl font-label-md transition-all border border-slate-200/50 bg-primary text-white shadow-sm shadow-primary/20">
+                All Work
+            </button>
+            <button data-filter="enterprise" class="filter-btn px-lg py-sm rounded-xl font-label-md transition-all border border-slate-200/50 bg-white text-on-surface-variant hover:bg-slate-50">
+                Enterprise
+            </button>
+            <button data-filter="aiml" class="filter-btn px-lg py-sm rounded-xl font-label-md transition-all border border-slate-200/50 bg-white text-on-surface-variant hover:bg-slate-50">
+                AI / ML
+            </button>
+            <button data-filter="websaas" class="filter-btn px-lg py-sm rounded-xl font-label-md transition-all border border-slate-200/50 bg-white text-on-surface-variant hover:bg-slate-50">
+                Web &amp; SaaS
+            </button>
+        </section>
+
+        <!-- Projects Grid -->
+        <section class="py-section px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto">
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter mb-section">
+                <!-- Card 1 -->
+                <div data-category="enterprise" class="project-card glass-card hover-card-primary p-xl rounded-3xl flex flex-col group h-full transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-lg group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-[32px]">architecture</span>
+                    </div>
+                    <span class="font-label-md text-xs text-primary font-bold uppercase tracking-wider mb-2">Enterprise</span>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Apex ERP Platform</h3>
+                    <p class="text-on-surface-variant mb-lg grow leading-relaxed">
+                        A full custom ERP migration mapping millions of data pipelines for a global automotive retailer.
+                    </p>
+                    <div class="flex gap-2 flex-wrap mb-xl">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">PostgreSQL</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">Go/Golang</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">AWS EKS</span>
+                    </div>
+                    <div class="border-t border-slate-100 pt-md flex justify-between items-center">
+                        <span class="text-primary font-extrabold text-headline-sm">+45% efficiency</span>
+                        <span class="material-symbols-outlined text-primary group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div data-category="aiml" class="project-card glass-card hover-card-tertiary p-xl rounded-3xl flex flex-col group h-full transition-all duration-300">
+                    <div class="w-16 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mb-lg group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-tertiary text-[32px]">psychology</span>
+                    </div>
+                    <span class="font-label-md text-xs text-tertiary font-bold uppercase tracking-wider mb-2">AI / ML</span>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Cognitive Agent Suite</h3>
+                    <p class="text-on-surface-variant mb-lg grow leading-relaxed">
+                        RAG-augmented AI support agents that resolve up to 70% of inbound issues without human handoff.
+                    </p>
+                    <div class="flex gap-2 flex-wrap mb-xl">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">OpenAI API</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">Python</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">Pinecone DB</span>
+                    </div>
+                    <div class="border-t border-slate-100 pt-md flex justify-between items-center">
+                        <span class="text-tertiary font-extrabold text-headline-sm">-70% Ticket Cost</span>
+                        <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div data-category="websaas" class="project-card glass-card hover-card-secondary p-xl rounded-3xl flex flex-col group h-full transition-all duration-300">
+                    <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-lg group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-secondary text-[32px]">web</span>
+                    </div>
+                    <span class="font-label-md text-xs text-secondary font-bold uppercase tracking-wider mb-2">Web &amp; SaaS</span>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Nova CRM Dashboard</h3>
+                    <p class="text-on-surface-variant mb-lg grow leading-relaxed">
+                        A real-time analytics Dashboard with complex reporting matrices and zero-latency loading.
+                    </p>
+                    <div class="flex gap-2 flex-wrap mb-xl">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">Next.js 14</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">Tailwind CSS</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">Supabase</span>
+                    </div>
+                    <div class="border-t border-slate-100 pt-md flex justify-between items-center">
+                        <span class="text-secondary font-extrabold text-headline-sm">0.9s Page Load</span>
+                        <span class="material-symbols-outlined text-secondary group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div data-category="websaas" class="project-card glass-card hover-card-secondary p-xl rounded-3xl flex flex-col group h-full transition-all duration-300">
+                    <div class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-lg group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-secondary text-[32px]">smartphone</span>
+                    </div>
+                    <span class="font-label-md text-xs text-secondary font-bold uppercase tracking-wider mb-2">Web &amp; SaaS</span>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Swift Delivery App</h3>
+                    <p class="text-on-surface-variant mb-lg grow leading-relaxed">
+                        React Native delivery app supporting high concurrency routing, live-tracking and vendor portals.
+                    </p>
+                    <div class="flex gap-2 flex-wrap mb-xl">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">React Native</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">Redis</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">Node.js API</span>
+                    </div>
+                    <div class="border-t border-slate-100 pt-md flex justify-between items-center">
+                        <span class="text-secondary font-extrabold text-headline-sm">99.98% SLA</span>
+                        <span class="material-symbols-outlined text-secondary group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div data-category="aiml" class="project-card glass-card hover-card-tertiary p-xl rounded-3xl flex flex-col group h-full transition-all duration-300">
+                    <div class="w-16 h-16 bg-tertiary/10 rounded-2xl flex items-center justify-center mb-lg group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-tertiary text-[32px]">terminal</span>
+                    </div>
+                    <span class="font-label-md text-xs text-tertiary font-bold uppercase tracking-wider mb-2">AI / ML</span>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Neural Logistics Engine</h3>
+                    <p class="text-on-surface-variant mb-lg grow leading-relaxed">
+                        Predictive algorithms designed to optimize shipping and distribution delivery schedules.
+                    </p>
+                    <div class="flex gap-2 flex-wrap mb-xl">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">PyTorch</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">FastAPI</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">Docker</span>
+                    </div>
+                    <div class="border-t border-slate-100 pt-md flex justify-between items-center">
+                        <span class="text-tertiary font-extrabold text-headline-sm">+30% Speedup</span>
+                        <span class="material-symbols-outlined text-tertiary group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div data-category="enterprise" class="project-card glass-card hover-card-primary p-xl rounded-3xl flex flex-col group h-full transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-lg group-hover:scale-110 transition-transform">
+                        <span class="material-symbols-outlined text-primary text-[32px]">cloud_sync</span>
+                    </div>
+                    <span class="font-label-md text-xs text-primary font-bold uppercase tracking-wider mb-2">Enterprise</span>
+                    <h3 class="font-headline-sm text-headline-sm text-on-surface mb-md">Fintech Migration</h3>
+                    <p class="text-on-surface-variant mb-lg grow leading-relaxed">
+                        Transitioning a legacy banking ledger structure to a secure containerized Kubernetes environment.
+                    </p>
+                    <div class="flex gap-2 flex-wrap mb-xl">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">Kubernetes</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">Terraform</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-medium">Java Spring</span>
+                    </div>
+                    <div class="border-t border-slate-100 pt-md flex justify-between items-center">
+                        <span class="text-primary font-extrabold text-headline-sm">SOC-2 Audited</span>
+                        <span class="material-symbols-outlined text-primary group-hover:translate-x-1.5 transition-transform">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section class="py-section px-margin-mobile md:px-margin-desktop text-center">
+            <div class="max-w-5xl mx-auto rounded-[32px] md:rounded-[40px] p-xl md:p-xxl bg-gradient-to-br from-primary/5 via-white to-secondary/5 border border-slate-200/60 shadow-xl shadow-slate-100/50 relative overflow-hidden group">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(37,99,235,0.06)_0%,_transparent_70%)]"></div>
+                <div class="relative z-10">
+                    <h2 class="font-display-hero-mobile md:font-headline-lg text-display-hero-mobile md:text-headline-lg text-on-surface mb-md tracking-tight">Interested in custom product development?</h2>
+                    <p class="text-body-lg text-on-surface-variant mb-xl max-w-2xl mx-auto leading-relaxed">Review our case study architectures and discuss details for your next product launch.</p>
+                    <button onclick="window.location.href='contact.html'" class="bg-gradient-to-r from-primary to-[#1d4ed8] text-white font-bold px-xxl py-lg rounded-xl hover:scale-105 active:scale-95 transition-all text-lg shadow-md hover:shadow-lg hover:shadow-primary/20">
+                        Get Started Today
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-slate-200/60 w-full mt-section">
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-gutter px-margin-mobile md:px-margin-desktop py-xxl w-full max-w-[1440px] mx-auto">
+            <div class="col-span-2 mb-lg md:mb-0">
+                <div class="flex items-center mb-md">
+                    <a href="index.html">
+                        <img src="images/light-bg.png" class="h-20 w-auto block object-contain" style="mix-blend-mode: multiply;" alt="Vernexify Technologies Logo" />
+                    </a>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant pr-xl leading-relaxed">
+                    Engineering the next generation of enterprise software solutions with a focus on speed, scale, and digital sophistication.
+                </p>
+            </div>
+            <div>
+                <h5 class="text-primary font-bold mb-md uppercase text-xs tracking-wider">Company</h5>
+                <ul class="space-y-sm font-body-sm text-body-sm text-on-surface-variant">
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="about.html">About Us</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="careers.html">Careers</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-primary font-bold mb-md uppercase text-xs tracking-wider">Services</h5>
+                <ul class="space-y-sm font-body-sm text-body-sm text-on-surface-variant">
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="services.html">Development</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="services.html">Design</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="services.html">AI Solutions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-primary font-bold mb-md uppercase text-xs tracking-wider">Resources</h5>
+                <ul class="space-y-sm font-body-sm text-body-sm text-on-surface-variant">
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="blog.html">Blog</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="portfolio.html">Portfolio</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="guides.html">Guides</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-primary font-bold mb-md uppercase text-xs tracking-wider">Legal</h5>
+                <ul class="space-y-sm font-body-sm text-body-sm text-on-surface-variant">
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="privacy.html">Privacy Policy</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="terms.html">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="px-margin-mobile md:px-margin-desktop py-lg border-t border-slate-100 text-center font-body-sm text-body-sm text-on-surface-variant/80 max-w-[1440px] mx-auto">
+            © 2026 Vernexify Technologies. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Interactive Navigation Scripts -->
+    <script>
+        // Drawer Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu(open) {
+            if (open) {
+                mobileMenu.classList.remove('translate-x-full');
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+            }
+        }
+
+        menuBtn.addEventListener('click', () => toggleMenu(true));
+        closeBtn.addEventListener('click', () => toggleMenu(false));
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) toggleMenu(false);
+        });
+        mobileLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+
+        // Portfolio filtering logic
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active styling from all buttons
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white', 'shadow-sm', 'shadow-primary/20');
+                    b.classList.add('bg-white', 'text-on-surface-variant', 'hover:bg-slate-50');
+                });
+                // Add active styling to clicked button
+                btn.classList.remove('bg-white', 'text-on-surface-variant', 'hover:bg-slate-50');
+                btn.classList.add('bg-primary', 'text-white', 'shadow-sm', 'shadow-primary/20');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(10px)';
+                    
+                    setTimeout(() => {
+                        const matchesFilter = filterValue === 'all' || card.getAttribute('data-category') === filterValue;
+                        if (matchesFilter) {
+                            card.classList.remove('hidden');
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.classList.add('hidden');
+                        }
+                    }, 200);
+                });
+            });
+        });
+
+        // Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

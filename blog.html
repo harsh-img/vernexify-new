@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Blog | Vernexify Technologies</title>
+    <meta name="description" content="Read engineering articles, next-gen SaaS design insights, and AI deployment guides from the engineering team at Vernexify."/>
+    
+    <!-- Google Fonts & Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    
+    <!-- Tailwind CSS with custom configuration -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            "colors": {
+              "primary": "#2563eb",
+              "on-primary": "#ffffff",
+              "primary-container": "#eff6ff",
+              "on-primary-container": "#1e40af",
+              "secondary": "#0ea5e9",
+              "on-secondary": "#ffffff",
+              "secondary-container": "#e0f2fe",
+              "on-secondary-container": "#0369a1",
+              "tertiary": "#7c3aed",
+              "on-tertiary": "#ffffff",
+              "tertiary-container": "#f5f3ff",
+              "on-tertiary-container": "#6d28d9",
+              "background": "#f8fafc",
+              "on-background": "#0f172a",
+              "surface": "#ffffff",
+              "surface-dim": "#f1f5f9",
+              "surface-bright": "#ffffff",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f8fafc",
+              "surface-container": "#f1f5f9",
+              "surface-container-high": "#e2e8f0",
+              "surface-container-highest": "#cbd5e1",
+              "on-surface": "#0f172a",
+              "on-surface-variant": "#475569",
+              "outline": "#e2e8f0",
+              "outline-variant": "#cbd5e1",
+              "error": "#ef4444",
+              "on-error": "#ffffff",
+              "error-container": "#fee2e2"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "2xl": "1rem",
+              "3xl": "1.25rem",
+              "4xl": "1.5rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "xxl": "48px",
+              "section": "72px",
+              "unit": "4px",
+              "sm": "8px",
+              "margin-desktop": "64px",
+              "lg": "24px",
+              "margin-mobile": "16px",
+              "xs": "4px",
+              "xl": "32px",
+              "md": "16px",
+              "gutter": "24px"
+            },
+            "fontFamily": {
+              "headline-sm": ["Sora"],
+              "body-sm": ["Inter"],
+              "label-md": ["Inter"],
+              "headline-md": ["Sora"],
+              "body-lg": ["Inter"],
+              "display-hero": ["Sora"],
+              "body-md": ["Inter"],
+              "headline-lg": ["Sora"],
+              "display-hero-mobile": ["Sora"]
+            },
+            "fontSize": {
+              "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+              "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+              "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+              "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+              "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+              "display-hero": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+              "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+              "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+              "display-hero-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+    
+    <style>
+        body {
+            background-color: #f8fafc;
+            color: #0f172a;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.04) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(124, 58, 237, 0.04) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.04) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(37, 99, 235, 0.02) 0px, transparent 50%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(15, 23, 42, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 30px rgba(15, 23, 42, 0.01), 0 1px 3px rgba(15, 23, 42, 0.01);
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+        }
+        .hover-card-primary:hover {
+            border-color: rgba(37, 99, 235, 0.25);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.06);
+        }
+        .hover-card-secondary:hover {
+            border-color: rgba(14, 165, 233, 0.25);
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.06);
+        }
+        .hover-card-tertiary:hover {
+            border-color: rgba(124, 58, 237, 0.25);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.06);
+        }
+        .accent-glow {
+            box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
+        }
+        .accent-glow:hover {
+            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+        }
+        .border-glass {
+            border: 1px solid rgba(15, 23, 42, 0.05);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased text-on-background bg-background">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/75 backdrop-blur-md border-b border-slate-200/50 shadow-sm shadow-slate-100/50 transition-all duration-300">
+        <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-md max-w-full mx-auto">
+            <div class="font-headline-sm text-headline-sm font-bold text-on-surface flex items-center gap-2">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/light-bg.png" class="h-16 w-auto block object-contain" style="mix-blend-mode: multiply;" alt="Vernexify Technologies Logo" />
+                </a>
+            </div>
+            <div class="hidden md:flex gap-xl items-center">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About Us</a>
+                <a class="font-label-md text-label-md text-primary transition-colors font-bold" href="blog.html">Blog</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
+                <button onclick="window.location.href='contact.html'" class="ml-lg bg-gradient-to-r from-primary to-[#1d4ed8] text-white px-lg py-sm rounded-xl font-label-md hover:translate-y-[-2px] hover:scale-[1.02] active:scale-95 transition-all accent-glow">
+                    Get Free Consultation
+                </button>
+            </div>
+            <!-- Mobile Toggle -->
+            <button id="menu-btn" class="md:hidden p-1 rounded-lg text-on-surface hover:bg-slate-100 transition-colors focus:outline-none" aria-label="Toggle Menu">
+                <span class="material-symbols-outlined text-[28px] block">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobile-menu" class="fixed inset-0 z-50 bg-slate-900/30 backdrop-blur-sm transform translate-x-full transition-transform duration-300 md:hidden" aria-hidden="true">
+        <div class="absolute right-0 top-0 h-full w-72 bg-white shadow-2xl flex flex-col p-lg border-l border-slate-200/60">
+            <div class="flex justify-between items-center mb-xl">
+                <a href="index.html" class="flex items-center">
+                    <img src="images/light-bg.png" class="h-20 w-auto block object-contain" style="mix-blend-mode: multiply;" style="mix-blend-mode: multiply;" alt="Vernexify Technologies Logo" />
+                </a>
+                <button id="close-menu-btn" class="p-1 rounded-lg text-on-surface-variant hover:text-primary hover:bg-slate-100 transition-colors focus:outline-none" aria-label="Close Menu">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="flex flex-col gap-md grow">
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="index.html">Home</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="services.html">Services</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="portfolio.html">Portfolio</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="about.html">About Us</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-primary transition-colors py-sm border-b border-slate-100" href="blog.html">Blog</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="contact.html">Contact</a>
+            </div>
+            <button onclick="window.location.href='contact.html'" class="bg-gradient-to-r from-primary to-[#1d4ed8] text-white px-lg py-md rounded-xl font-label-md hover:scale-[1.02] active:scale-95 transition-all accent-glow w-full mt-auto mb-md">
+                Get Free Consultation
+            </button>
+        </div>
+    </div>
+
+    <main class="relative pt-24 bg-background">
+        <!-- Hero & Research Header Section -->
+        <section class="pt-12 pb-6 px-margin-mobile md:px-margin-desktop max-w-[1380px] mx-auto">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-end gap-md border-b border-slate-200/60 pb-6">
+                <div class="text-left max-w-xl">
+                    <span class="font-label-md text-primary uppercase tracking-widest font-bold block mb-1">Knowledge Portal</span>
+                    <h1 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">
+                        Engineering Insights &amp; Research
+                    </h1>
+                    <p class="text-body-sm text-on-surface-variant mt-2 leading-relaxed">
+                        Exploring the frontier of systems scalability, automated AI pipelines, and distributed databases.
+                    </p>
+                </div>
+                
+                <!-- Search bar on the right -->
+                <div class="w-full md:w-80 relative">
+                    <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+                    <input type="text" id="search-input" placeholder="Search research papers..." class="w-full bg-white border border-slate-200 rounded-xl pl-10 pr-4 py-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm shadow-sm"/>
+                </div>
+            </div>
+            
+            <!-- Categories Filters below -->
+            <div class="flex gap-xs flex-wrap mt-md justify-start">
+                <button data-filter="all" class="filter-btn px-md py-1.5 rounded-lg text-xs font-bold transition-all border border-slate-200/50 bg-primary text-white shadow-sm shadow-primary/20">
+                    All Publications
+                </button>
+                <button data-filter="engineering" class="filter-btn px-md py-1.5 rounded-lg text-xs font-bold transition-all border border-slate-200/50 bg-white text-on-surface-variant hover:bg-slate-50">
+                    Systems Engineering
+                </button>
+                <button data-filter="aiml" class="filter-btn px-md py-1.5 rounded-lg text-xs font-bold transition-all border border-slate-200/50 bg-white text-on-surface-variant hover:bg-slate-50">
+                    AI / ML Research
+                </button>
+                <button data-filter="design" class="filter-btn px-md py-1.5 rounded-lg text-xs font-bold transition-all border border-slate-200/50 bg-white text-on-surface-variant hover:bg-slate-50">
+                    Product UX Design
+                </button>
+            </div>
+        </section>
+
+        <!-- Blog Grid & Newsletter (Eklavya Split Layout) -->
+        <section class="py-section px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto mb-section">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start max-w-[1380px] mx-auto">
+                
+                <!-- Left Main Column (Featured Post + Secondary Grid) -->
+                <div class="lg:col-span-8 space-y-lg">
+                    <!-- Featured Article container -->
+                    <div id="featured-article-container"></div>
+                    
+                    <!-- Title label for other articles -->
+                    <h3 class="font-headline-sm text-lg font-bold text-on-surface pt-6 border-t border-slate-100 flex items-center gap-sm">
+                        <span class="w-1.5 h-6 bg-primary rounded-full"></span> Latest Research &amp; Insights
+                    </h3>
+                    
+                    <!-- Secondary Articles Grid -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter" id="articles-list">
+                        <!-- Dynamic grid items go here -->
+                    </div>
+                </div>
+
+                <!-- Right Sidebar Section -->
+                <div class="lg:col-span-4 space-y-lg text-left">
+                    <!-- Newsletter Card -->
+                    <div class="bg-gradient-to-br from-primary via-[#1e40af] to-blue-950 text-white p-lg rounded-3xl space-y-md shadow-lg relative overflow-hidden">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(255,255,255,0.06)_0%,_transparent_60%)]"></div>
+                        <div class="relative z-10 space-y-sm">
+                            <span class="material-symbols-outlined text-[36px] text-cyan-300">mail</span>
+                            <h3 class="font-headline-sm text-lg font-bold">The Systems Round-up</h3>
+                            <p class="text-xs text-slate-200 leading-relaxed">
+                                Get monthly global research summaries, security advisories, and architecture audits directly in your mailbox.
+                            </p>
+                            <form id="newsletter-form" class="space-y-sm pt-2">
+                                <input type="email" id="news-email" required placeholder="professional@company.com" class="w-full bg-white/10 border border-white/20 rounded-xl px-md py-sm focus:outline-none focus:border-cyan-300 focus:ring-2 focus:ring-cyan-300/20 text-body-sm text-white placeholder-slate-300"/>
+                                <button type="submit" class="w-full bg-white text-primary hover:bg-slate-100 font-bold py-sm rounded-xl transition-all hover:scale-[1.02] active:scale-95 text-xs shadow-md">
+                                    Subscribe Now
+                                </button>
+                            </form>
+                            <p id="news-success" class="text-xs text-cyan-200 font-bold hidden">Subscription confirmed! Thank you.</p>
+                        </div>
+                    </div>
+
+                    <!-- Trending Topics -->
+                    <div class="glass-card p-lg rounded-3xl space-y-md border-glass shadow-sm">
+                        <h3 class="font-headline-sm text-sm font-bold text-on-surface uppercase tracking-wider">Trending Topics</h3>
+                        <ul class="space-y-sm">
+                            <li class="flex gap-md items-start">
+                                <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">01</span>
+                                <span class="text-xs text-on-surface-variant font-medium hover:text-primary transition-colors cursor-pointer">Next.js Server Actions Scaling</span>
+                            </li>
+                            <li class="flex gap-md items-start">
+                                <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">02</span>
+                                <span class="text-xs text-on-surface-variant font-medium hover:text-primary transition-colors cursor-pointer">Kubernetes VPC Isolation Rules</span>
+                            </li>
+                            <li class="flex gap-md items-start">
+                                <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">03</span>
+                                <span class="text-xs text-on-surface-variant font-medium hover:text-primary transition-colors cursor-pointer">INT8 Quantization for Edge AI</span>
+                            </li>
+                            <li class="flex gap-md items-start">
+                                <span class="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">04</span>
+                                <span class="text-xs text-on-surface-variant font-medium hover:text-primary transition-colors cursor-pointer">PgBouncer Transaction Pooling</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Most Read -->
+                    <div class="glass-card p-lg rounded-3xl space-y-md border-glass shadow-sm">
+                        <h3 class="font-headline-sm text-sm font-bold text-on-surface uppercase tracking-wider">Most Read Articles</h3>
+                        <div class="space-y-md">
+                            <a href="blog-detail.html?id=pinecone-index-tunning" class="flex gap-sm items-center hover:opacity-80 transition-opacity">
+                                <div class="w-12 h-12 rounded-lg bg-tertiary/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-tertiary">analytics</span></div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-on-surface line-clamp-1">Vector Index Tuning: Sub-10ms Searches</h4>
+                                    <p class="text-[10px] text-on-surface-variant">Dr. Aris Vance • 6 min read</p>
+                                </div>
+                            </a>
+                            <a href="blog-detail.html?id=quiet-luxury-ux" class="flex gap-sm items-center hover:opacity-80 transition-opacity">
+                                <div class="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-secondary">palette</span></div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-on-surface line-clamp-1">The Aesthetic of Quiet Luxury: UX Systems</h4>
+                                    <p class="text-[10px] text-on-surface-variant">Clara Adams • 4 min read</p>
+                                </div>
+                            </a>
+                            <a href="blog-detail.html?id=kubernetes-security" class="flex gap-sm items-center hover:opacity-80 transition-opacity">
+                                <div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"><span class="material-symbols-outlined text-primary">security</span></div>
+                                <div>
+                                    <h4 class="text-xs font-bold text-on-surface line-clamp-1">Securing Kubernetes Pods: VPC Privates</h4>
+                                    <p class="text-[10px] text-on-surface-variant">Elena Rostova • 6 min read</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Technical Advisory Board seal -->
+                    <div class="border border-dashed border-slate-200 p-md rounded-2xl flex items-center gap-sm bg-slate-50/50">
+                        <span class="material-symbols-outlined text-primary text-[28px]">verified</span>
+                        <p class="text-[10px] text-on-surface-variant font-medium leading-relaxed">
+                            <strong class="text-on-surface block font-bold">Technical Advisory Board</strong>
+                            All research publications undergo rigorous peer-review to confirm compliance with ISO-27001 and SOC-2 data standards.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-white border-t border-slate-200/60 w-full mt-section">
+        <div class="grid grid-cols-2 md:grid-cols-6 gap-gutter px-margin-mobile md:px-margin-desktop py-xxl w-full max-w-[1440px] mx-auto">
+            <div class="col-span-2 mb-lg md:mb-0">
+                <div class="flex items-center mb-md">
+                    <a href="index.html">
+                        <img src="images/light-bg.png" class="h-20 w-auto block object-contain" style="mix-blend-mode: multiply;" alt="Vernexify Technologies Logo" />
+                    </a>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant pr-xl leading-relaxed">
+                    Engineering the next generation of enterprise software solutions with a focus on speed, scale, and digital sophistication.
+                </p>
+            </div>
+            <div>
+                <h5 class="text-primary font-bold mb-md uppercase text-xs tracking-wider">Company</h5>
+                <ul class="space-y-sm font-body-sm text-body-sm text-on-surface-variant">
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="about.html">About Us</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="careers.html">Careers</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-primary font-bold mb-md uppercase text-xs tracking-wider">Services</h5>
+                <ul class="space-y-sm font-body-sm text-body-sm text-on-surface-variant">
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="services.html">Development</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="services.html">Design</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="services.html">AI Solutions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-primary font-bold mb-md uppercase text-xs tracking-wider">Resources</h5>
+                <ul class="space-y-sm font-body-sm text-body-sm text-on-surface-variant">
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="blog.html">Blog</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="portfolio.html">Portfolio</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="guides.html">Guides</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-primary font-bold mb-md uppercase text-xs tracking-wider">Legal</h5>
+                <ul class="space-y-sm font-body-sm text-body-sm text-on-surface-variant">
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="privacy.html">Privacy Policy</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="terms.html">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="px-margin-mobile md:px-margin-desktop py-lg border-t border-slate-100 text-center font-body-sm text-body-sm text-on-surface-variant/80 max-w-[1440px] mx-auto">
+            © 2026 Vernexify Technologies. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Load Blog Data -->
+    <script src="blog-data.js"></script>
+
+    <!-- Interactive Navigation Scripts -->
+    <script>
+        // Drawer Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function toggleMenu(open) {
+            if (open) {
+                mobileMenu.classList.remove('translate-x-full');
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+            }
+        }
+
+        menuBtn.addEventListener('click', () => toggleMenu(true));
+        closeBtn.addEventListener('click', () => toggleMenu(false));
+        mobileMenu.addEventListener('click', (e) => {
+            if (e.target === mobileMenu) toggleMenu(false);
+        });
+        mobileLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+
+        // Newsletter form submission
+        const newsForm = document.getElementById('newsletter-form');
+        const newsSuccess = document.getElementById('news-success');
+        newsForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            newsSuccess.classList.remove('hidden');
+            newsForm.reset();
+        });
+
+        // Dynamic articles rendering
+        const featuredContainer = document.getElementById('featured-article-container');
+        const articlesList = document.getElementById('articles-list');
+        
+        // Intersection Observer definition
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        function renderArticles() {
+            if (!featuredContainer || !articlesList || typeof blogData === 'undefined') return;
+            featuredContainer.innerHTML = '';
+            articlesList.innerHTML = '';
+
+            const imageMap = {
+                "scaling-nextjs": "images/nextjs_blog.png",
+                "postgres-optimize": "images/postgres_blog.png",
+                "kubernetes-security": "images/kubernetes_blog.png",
+                "microservices-grpc": "images/grpc_blog.png",
+                "secure-rag-hipaa": "images/rag_blog.png",
+                "llm-agents-workflow": "images/agents_blog.png",
+                "computer-vision-retail": "images/vision_blog.png",
+                "pinecone-index-tunning": "images/vector_blog.png",
+                "quiet-luxury-ux": "images/luxury_blog.png",
+                "tailwind-custom-tokens": "images/tailwind_blog.png",
+                "css-micro-interactions": "images/motion_blog.png",
+                "typography-editorial-systems": "images/editorial_blog.png"
+            };
+
+            // 1. Render Featured Article (First article in the array)
+            const featuredPost = blogData[0];
+            const featuredImg = imageMap[featuredPost.id] || "images/engineering_blog.png";
+            const featuredCard = document.createElement('div');
+            featuredCard.className = 'article-card glass-card hover-card-primary p-lg md:p-xl rounded-3xl transition-all duration-300 opacity-0 translate-y-10 mb-lg text-left';
+            featuredCard.setAttribute('data-category', featuredPost.category);
+            featuredCard.innerHTML = `
+                <div class="relative w-full h-64 md:h-80 bg-slate-100 rounded-2xl overflow-hidden mb-lg flex items-center justify-center select-none">
+                    <img src="${featuredImg}" class="w-full h-full object-cover rounded-2xl" alt="${featuredPost.title}" />
+                    <span class="absolute top-4 left-4 bg-primary text-white text-xs font-bold px-2.5 py-1 rounded-md uppercase tracking-wider">Featured Analysis</span>
+                </div>
+                <div class="flex justify-between items-center mb-sm">
+                    <span class="bg-primary/10 text-primary text-xs font-bold px-2.5 py-1 rounded-md uppercase">${featuredPost.category}</span>
+                    <span class="text-xs text-on-surface-variant font-medium">${featuredPost.readTime} • ${featuredPost.date}</span>
+                </div>
+                <h2 class="font-headline-sm text-2xl font-bold text-on-surface mb-xs hover:text-primary transition-colors cursor-pointer" onclick="window.location.href='blog-detail.html?id=${featuredPost.id}'">
+                    ${featuredPost.title}
+                </h2>
+                <p class="text-body-sm text-on-surface-variant mb-lg leading-relaxed">
+                    ${featuredPost.excerpt}
+                </p>
+                <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-md border-t border-slate-100 pt-md">
+                    <div class="flex items-center gap-sm">
+                        <span class="material-symbols-outlined text-slate-400 text-[32px]">account_circle</span>
+                        <div>
+                            <p class="text-xs font-bold text-on-surface">${featuredPost.author}</p>
+                        </div>
+                    </div>
+                    <a href="blog-detail.html?id=${featuredPost.id}" class="text-primary text-xs font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                        Read Full Analysis <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+                    </a>
+                </div>
+            `;
+            featuredContainer.appendChild(featuredCard);
+            observer.observe(featuredCard);
+
+            // 2. Render Secondary Articles Grid (Remaining articles)
+            const secondaryPosts = blogData.slice(1);
+            secondaryPosts.forEach(post => {
+                const borderStyle = post.category === 'engineering' ? 'hover-card-primary' : (post.category === 'aiml' ? 'hover-card-tertiary' : 'hover-card-secondary');
+                const badgeColor = post.category === 'engineering' ? 'bg-primary/10 text-primary' : (post.category === 'aiml' ? 'bg-tertiary/10 text-tertiary' : 'bg-secondary/10 text-secondary');
+                const arrowColor = post.category === 'engineering' ? 'text-primary' : (post.category === 'aiml' ? 'text-tertiary' : 'text-secondary');
+                
+                const postImg = imageMap[post.id] || "images/engineering_blog.png";
+
+                const card = document.createElement('div');
+                card.className = `article-card glass-card ${borderStyle} p-lg rounded-3xl transition-all duration-300 opacity-0 translate-y-10 flex flex-col justify-between text-left`;
+                card.setAttribute('data-category', post.category);
+                card.innerHTML = `
+                    <div class="space-y-md">
+                        <div class="w-full h-36 bg-slate-100 rounded-xl overflow-hidden flex items-center justify-center select-none mb-xs">
+                            <img src="${postImg}" class="w-full h-full object-cover rounded-xl" alt="${post.title}" />
+                        </div>
+                        <div class="flex justify-between items-center mb-sm">
+                            <span class="${badgeColor} text-xs font-bold px-2.5 py-1 rounded-md uppercase">${post.category === 'aiml' ? 'AI / ML' : post.category}</span>
+                            <span class="text-xs text-on-surface-variant font-medium">${post.readTime}</span>
+                        </div>
+                        <h3 class="font-headline-sm text-base font-bold text-on-surface mb-xs hover:text-primary transition-colors cursor-pointer line-clamp-2" onclick="window.location.href='blog-detail.html?id=${post.id}'">
+                            ${post.title}
+                        </h3>
+                        <p class="text-xs text-on-surface-variant leading-relaxed line-clamp-3">
+                            ${post.excerpt}
+                        </p>
+                    </div>
+                    <div class="flex justify-between items-center border-t border-slate-100 pt-sm mt-md">
+                        <span class="text-[10px] text-on-surface-variant font-medium">${post.date}</span>
+                        <a href="blog-detail.html?id=${post.id}" class="${arrowColor} text-xs font-bold flex items-center gap-0.5 hover:gap-1.5 transition-all">
+                            Read Insights <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+                        </a>
+                    </div>
+                `;
+                articlesList.appendChild(card);
+                observer.observe(card);
+            });
+        }
+
+        renderArticles();
+
+        // Interactive filtering and text searching
+        const searchInput = document.getElementById('search-input');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+
+        let activeCategory = 'all';
+
+        function filterArticles() {
+            const searchQuery = searchInput.value.toLowerCase().trim();
+            const articles = document.querySelectorAll('.article-card');
+
+            articles.forEach(article => {
+                const title = article.querySelector('h2, h3').textContent.toLowerCase();
+                const desc = article.querySelector('p').textContent.toLowerCase();
+                const category = article.getAttribute('data-category');
+
+                const matchesCategory = activeCategory === 'all' || category === activeCategory;
+                const matchesSearch = title.includes(searchQuery) || desc.includes(searchQuery);
+
+                if (matchesCategory && matchesSearch) {
+                    article.classList.remove('hidden');
+                    setTimeout(() => {
+                        article.style.opacity = '1';
+                        article.style.transform = 'translateY(0)';
+                    }, 50);
+                } else {
+                    article.classList.add('hidden');
+                    article.style.opacity = '0';
+                }
+            });
+        }
+
+        searchInput.addEventListener('input', filterArticles);
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('bg-primary', 'text-white', 'shadow-sm', 'shadow-primary/20');
+                    b.classList.add('bg-white', 'text-on-surface-variant', 'hover:bg-slate-50');
+                });
+                btn.classList.remove('bg-white', 'text-on-surface-variant', 'hover:bg-slate-50');
+                btn.classList.add('bg-primary', 'text-white', 'shadow-sm', 'shadow-primary/20');
+
+                activeCategory = btn.getAttribute('data-filter');
+                filterArticles();
+            });
+        });
+
+        // Initialize observer for other static glass-cards
+        document.querySelectorAll('.glass-card:not(.article-card)').forEach(card => {
+            card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
