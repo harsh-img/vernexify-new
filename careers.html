@@ -1,112 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Careers | Vernexify Technologies</title>
-    <meta name="description" content="Join the elite software engineering team at Vernexify. Explore open positions for React developers, AI specialists, and UI/UX designers."/>
-    
+    <meta name="description"
+        content="Join the elite software engineering team at Vernexify. Explore open positions for React developers, AI specialists, and UI/UX designers." />
+
     <!-- Google Fonts & Material Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;family=Inter:wght@400;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
     <!-- Tailwind CSS with custom configuration -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script id="tailwind-config">
-      tailwind.config = {
-        theme: {
-          extend: {
-            "colors": {
-              "primary": "#2563eb",
-              "on-primary": "#ffffff",
-              "primary-container": "#eff6ff",
-              "on-primary-container": "#1e40af",
-              "secondary": "#0ea5e9",
-              "on-secondary": "#ffffff",
-              "secondary-container": "#e0f2fe",
-              "on-secondary-container": "#0369a1",
-              "tertiary": "#7c3aed",
-              "on-tertiary": "#ffffff",
-              "tertiary-container": "#f5f3ff",
-              "on-tertiary-container": "#6d28d9",
-              "background": "#f8fafc",
-              "on-background": "#0f172a",
-              "surface": "#ffffff",
-              "surface-dim": "#f1f5f9",
-              "surface-bright": "#ffffff",
-              "surface-container-lowest": "#ffffff",
-              "surface-container-low": "#f8fafc",
-              "surface-container": "#f1f5f9",
-              "surface-container-high": "#e2e8f0",
-              "surface-container-highest": "#cbd5e1",
-              "on-surface": "#0f172a",
-              "on-surface-variant": "#475569",
-              "outline": "#e2e8f0",
-              "outline-variant": "#cbd5e1",
-              "error": "#ef4444",
-              "on-error": "#ffffff",
-              "error-container": "#fee2e2"
+        tailwind.config = {
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#2563eb",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#eff6ff",
+                        "on-primary-container": "#1e40af",
+                        "secondary": "#0ea5e9",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e0f2fe",
+                        "on-secondary-container": "#0369a1",
+                        "tertiary": "#7c3aed",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#f5f3ff",
+                        "on-tertiary-container": "#6d28d9",
+                        "background": "#f8fafc",
+                        "on-background": "#0f172a",
+                        "surface": "#ffffff",
+                        "surface-dim": "#f1f5f9",
+                        "surface-bright": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f8fafc",
+                        "surface-container": "#f1f5f9",
+                        "surface-container-high": "#e2e8f0",
+                        "surface-container-highest": "#cbd5e1",
+                        "on-surface": "#0f172a",
+                        "on-surface-variant": "#475569",
+                        "outline": "#e2e8f0",
+                        "outline-variant": "#cbd5e1",
+                        "error": "#ef4444",
+                        "on-error": "#ffffff",
+                        "error-container": "#fee2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.25rem",
+                        "4xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xxl": "48px",
+                        "section": "72px",
+                        "unit": "4px",
+                        "sm": "8px",
+                        "margin-desktop": "64px",
+                        "lg": "24px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-sm": ["Sora"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "display-hero": ["Sora"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Sora"],
+                        "display-hero-mobile": ["Sora"]
+                    },
+                    "fontSize": {
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "display-hero": ["72px", { "lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-hero-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                },
             },
-            "borderRadius": {
-              "DEFAULT": "0.25rem",
-              "lg": "0.5rem",
-              "xl": "0.75rem",
-              "2xl": "1rem",
-              "3xl": "1.25rem",
-              "4xl": "1.5rem",
-              "full": "9999px"
-            },
-            "spacing": {
-              "xxl": "48px",
-              "section": "72px",
-              "unit": "4px",
-              "sm": "8px",
-              "margin-desktop": "64px",
-              "lg": "24px",
-              "margin-mobile": "16px",
-              "xs": "4px",
-              "xl": "32px",
-              "md": "16px",
-              "gutter": "24px"
-            },
-            "fontFamily": {
-              "headline-sm": ["Sora"],
-              "body-sm": ["Inter"],
-              "label-md": ["Inter"],
-              "headline-md": ["Sora"],
-              "body-lg": ["Inter"],
-              "display-hero": ["Sora"],
-              "body-md": ["Inter"],
-              "headline-lg": ["Sora"],
-              "display-hero-mobile": ["Sora"]
-            },
-            "fontSize": {
-              "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-              "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-              "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-              "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
-              "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-              "display-hero": ["72px", {"lineHeight": "80px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-              "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-              "headline-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
-              "display-hero-mobile": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700"}]
-            }
-          },
-        },
-      }
+        }
     </script>
-    
+
     <style>
         body {
             background-color: #f8fafc;
             color: #0f172a;
             overflow-x: hidden;
-            background-image: 
+            background-image:
                 radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.04) 0px, transparent 50%),
                 radial-gradient(at 100% 0%, rgba(124, 58, 237, 0.04) 0px, transparent 50%),
                 radial-gradient(at 100% 100%, rgba(14, 165, 233, 0.04) 0px, transparent 50%),
                 radial-gradient(at 0% 100%, rgba(37, 99, 235, 0.02) 0px, transparent 50%);
         }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.75);
             backdrop-filter: blur(12px);
@@ -115,79 +124,112 @@
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             box-shadow: 0 4px 30px rgba(15, 23, 42, 0.01), 0 1px 3px rgba(15, 23, 42, 0.01);
         }
+
         .glass-card:hover {
             transform: translateY(-4px);
         }
+
         .hover-card-primary:hover {
             border-color: rgba(37, 99, 235, 0.25);
             box-shadow: 0 10px 30px rgba(37, 99, 235, 0.06);
         }
+
         .hover-card-secondary:hover {
             border-color: rgba(14, 165, 233, 0.25);
             box-shadow: 0 10px 30px rgba(14, 165, 233, 0.06);
         }
+
         .hover-card-tertiary:hover {
             border-color: rgba(124, 58, 237, 0.25);
             box-shadow: 0 10px 30px rgba(124, 58, 237, 0.06);
         }
+
         .accent-glow {
             box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25);
         }
+
         .accent-glow:hover {
             box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
         }
+
         .border-glass {
             border: 1px solid rgba(15, 23, 42, 0.05);
         }
     </style>
 </head>
+
 <body class="font-body-md text-body-md antialiased text-on-background bg-background">
     <!-- TopNavBar -->
-    <nav class="fixed top-0 w-full z-50 bg-white/75 backdrop-blur-md border-b border-slate-200/50 shadow-sm shadow-slate-100/50 transition-all duration-300">
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/75 backdrop-blur-md border-b border-slate-200/50 shadow-sm shadow-slate-100/50 transition-all duration-300">
         <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-md max-w-full mx-auto">
             <div class="font-headline-sm text-headline-sm font-bold text-on-surface flex items-center gap-2">
                 <a href="index.html" class="flex items-center">
-                    <img src="images/light-bg.png" class="h-16 w-auto block object-contain" style="mix-blend-mode: multiply;" alt="Vernexify Technologies Logo" />
+                    <img src="images/light-bg.png" class="h-16 w-auto block object-contain"
+                        style="mix-blend-mode: multiply;" alt="Vernexify Technologies Logo" />
                 </a>
             </div>
             <div class="hidden md:flex gap-xl items-center">
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="index.html">Home</a>
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="services.html">Services</a>
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="portfolio.html">Portfolio</a>
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="about.html">About Us</a>
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="blog.html">Blog</a>
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="contact.html">Contact</a>
-                <button onclick="window.location.href='contact.html'" class="ml-lg bg-gradient-to-r from-primary to-[#1d4ed8] text-white px-lg py-sm rounded-xl font-label-md hover:translate-y-[-2px] hover:scale-[1.02] active:scale-95 transition-all accent-glow">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="index.html">Home</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="services.html">Services</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="portfolio.html">Portfolio</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="about.html">About Us</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="blog.html">Blog</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="contact.html">Contact</a>
+                <button onclick="window.location.href='contact.html'"
+                    class="ml-lg bg-gradient-to-r from-primary to-[#1d4ed8] text-white px-lg py-sm rounded-xl font-label-md hover:translate-y-[-2px] hover:scale-[1.02] active:scale-95 transition-all accent-glow">
                     Get Free Consultation
                 </button>
             </div>
             <!-- Mobile Toggle -->
-            <button id="menu-btn" class="md:hidden p-1 rounded-lg text-on-surface hover:bg-slate-100 transition-colors focus:outline-none" aria-label="Toggle Menu">
+            <button id="menu-btn"
+                class="md:hidden p-1 rounded-lg text-on-surface hover:bg-slate-100 transition-colors focus:outline-none"
+                aria-label="Toggle Menu">
                 <span class="material-symbols-outlined text-[28px] block">menu</span>
             </button>
         </div>
     </nav>
 
     <!-- Mobile Drawer Menu -->
-    <div id="mobile-menu" class="fixed inset-0 z-50 bg-slate-900/30 backdrop-blur-sm transform translate-x-full transition-transform duration-300 md:hidden" aria-hidden="true">
-        <div class="absolute right-0 top-0 h-full w-72 bg-white shadow-2xl flex flex-col p-lg border-l border-slate-200/60">
+    <div id="mobile-menu"
+        class="fixed inset-0 z-50 bg-slate-900/30 backdrop-blur-sm transform translate-x-full transition-transform duration-300 md:hidden"
+        aria-hidden="true">
+        <div
+            class="absolute right-0 top-0 h-full w-72 bg-white shadow-2xl flex flex-col p-lg border-l border-slate-200/60">
             <div class="flex justify-between items-center mb-xl">
                 <a href="index.html" class="flex items-center">
-                    <img src="images/light-bg.png" class="h-20 w-auto block object-contain" style="mix-blend-mode: multiply;" style="mix-blend-mode: multiply;" alt="Vernexify Technologies Logo" />
+                    <img src="images/light-bg.png" class="h-20 w-auto block object-contain"
+                        style="mix-blend-mode: multiply;" style="mix-blend-mode: multiply;"
+                        alt="Vernexify Technologies Logo" />
                 </a>
-                <button id="close-menu-btn" class="p-1 rounded-lg text-on-surface-variant hover:text-primary hover:bg-slate-100 transition-colors focus:outline-none" aria-label="Close Menu">
+                <button id="close-menu-btn"
+                    class="p-1 rounded-lg text-on-surface-variant hover:text-primary hover:bg-slate-100 transition-colors focus:outline-none"
+                    aria-label="Close Menu">
                     <span class="material-symbols-outlined">close</span>
                 </button>
             </div>
             <div class="flex flex-col gap-md grow">
-                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="index.html">Home</a>
-                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="services.html">Services</a>
-                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="portfolio.html">Portfolio</a>
-                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="about.html">About Us</a>
-                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="blog.html">Blog</a>
-                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100" href="contact.html">Contact</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100"
+                    href="index.html">Home</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100"
+                    href="services.html">Services</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100"
+                    href="portfolio.html">Portfolio</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100"
+                    href="about.html">About Us</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100"
+                    href="blog.html">Blog</a>
+                <a class="mobile-nav-link font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-sm border-b border-slate-100"
+                    href="contact.html">Contact</a>
             </div>
-            <button onclick="window.location.href='contact.html'" class="bg-gradient-to-r from-primary to-[#1d4ed8] text-white px-lg py-md rounded-xl font-label-md hover:scale-[1.02] active:scale-95 transition-all accent-glow w-full mt-auto mb-md">
+            <button onclick="window.location.href='contact.html'"
+                class="bg-gradient-to-r from-primary to-[#1d4ed8] text-white px-lg py-md rounded-xl font-label-md hover:scale-[1.02] active:scale-95 transition-all accent-glow w-full mt-auto mb-md">
                 Get Free Consultation
             </button>
         </div>
@@ -197,11 +239,13 @@
         <!-- Hero Section -->
         <section class="py-xl px-margin-mobile md:px-margin-desktop text-center max-w-7xl mx-auto">
             <span class="font-label-md text-primary uppercase tracking-widest font-bold block mb-2">Careers</span>
-            <h1 class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface mb-md bg-gradient-to-r from-primary via-tertiary to-secondary bg-clip-text text-transparent tracking-tight leading-tight">
+            <h1
+                class="font-display-hero-mobile md:font-display-hero text-display-hero-mobile md:text-display-hero text-on-surface mb-md bg-gradient-to-r from-primary via-tertiary to-secondary bg-clip-text text-transparent tracking-tight leading-tight">
                 Build the Next Dimension
             </h1>
             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
-                Join our elite squad of developers, designers and architects building next-generation cognitive enterprise products.
+                Join our elite squad of developers, designers and architects building next-generation cognitive
+                enterprise products.
             </p>
         </section>
 
@@ -209,51 +253,61 @@
         <section class="py-section px-margin-mobile md:px-margin-desktop max-w-7xl mx-auto mb-section">
             <div class="mb-xl">
                 <h2 class="font-headline-sm text-headline-sm text-on-surface font-bold">Open Roles</h2>
-                <p class="text-body-sm text-on-surface-variant">We seek candidates with high technical skills and architectural mindset.</p>
+                <p class="text-body-sm text-on-surface-variant">We seek candidates with high technical skills and
+                    architectural mindset.</p>
             </div>
 
             <div class="space-y-md">
                 <!-- Role 1 -->
-                <div class="glass-card p-lg rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center hover-card-primary gap-md">
+                <div
+                    class="glass-card p-lg rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center hover-card-primary gap-md">
                     <div>
-                        <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1">Senior React &amp; Frontend Engineer</h3>
+                        <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1">Senior React &amp; Frontend
+                            Engineer</h3>
                         <div class="flex gap-2 text-xs text-on-surface-variant">
                             <span class="font-medium bg-slate-100 px-2.5 py-1 rounded">London, UK / Remote</span>
                             <span class="font-medium bg-slate-100 px-2.5 py-1 rounded">Full-time</span>
                             <span class="font-medium bg-slate-100 px-2.5 py-1 rounded">Engineering</span>
                         </div>
                     </div>
-                    <button data-role="Senior React & Frontend Engineer" class="apply-btn bg-primary text-white font-semibold px-lg py-sm rounded-xl hover:scale-105 active:scale-95 transition-all text-sm shrink-0">
+                    <button data-role="Senior React & Frontend Engineer"
+                        class="apply-btn bg-primary text-white font-semibold px-lg py-sm rounded-xl hover:scale-105 active:scale-95 transition-all text-sm shrink-0">
                         Apply Now
                     </button>
                 </div>
 
                 <!-- Role 2 -->
-                <div class="glass-card p-lg rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center hover-card-tertiary gap-md">
+                <div
+                    class="glass-card p-lg rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center hover-card-tertiary gap-md">
                     <div>
-                        <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1">AI Research &amp; RAG Specialist</h3>
+                        <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1">AI Research &amp; RAG
+                            Specialist</h3>
                         <div class="flex gap-2 text-xs text-on-surface-variant">
                             <span class="font-medium bg-slate-100 px-2.5 py-1 rounded">Remote (Global)</span>
                             <span class="font-medium bg-slate-100 px-2.5 py-1 rounded">Full-time</span>
                             <span class="font-medium bg-slate-100 px-2.5 py-1 rounded">Artificial Intelligence</span>
                         </div>
                     </div>
-                    <button data-role="AI Research & RAG Specialist" class="apply-btn bg-primary text-white font-semibold px-lg py-sm rounded-xl hover:scale-105 active:scale-95 transition-all text-sm shrink-0">
+                    <button data-role="AI Research & RAG Specialist"
+                        class="apply-btn bg-primary text-white font-semibold px-lg py-sm rounded-xl hover:scale-105 active:scale-95 transition-all text-sm shrink-0">
                         Apply Now
                     </button>
                 </div>
 
                 <!-- Role 3 -->
-                <div class="glass-card p-lg rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center hover-card-secondary gap-md">
+                <div
+                    class="glass-card p-lg rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center hover-card-secondary gap-md">
                     <div>
-                        <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1">UI/UX Designer &amp; System Architect</h3>
+                        <h3 class="font-headline-sm text-lg font-bold text-on-surface mb-1">UI/UX Designer &amp; System
+                            Architect</h3>
                         <div class="flex gap-2 text-xs text-on-surface-variant">
                             <span class="font-medium bg-slate-100 px-2.5 py-1 rounded">New York, US / Hybrid</span>
                             <span class="font-medium bg-slate-100 px-2.5 py-1 rounded">Contract</span>
                             <span class="font-medium bg-slate-100 px-2.5 py-1 rounded">Product Design</span>
                         </div>
                     </div>
-                    <button data-role="UI/UX Designer & System Architect" class="apply-btn bg-primary text-white font-semibold px-lg py-sm rounded-xl hover:scale-105 active:scale-95 transition-all text-sm shrink-0">
+                    <button data-role="UI/UX Designer & System Architect"
+                        class="apply-btn bg-primary text-white font-semibold px-lg py-sm rounded-xl hover:scale-105 active:scale-95 transition-all text-sm shrink-0">
                         Apply Now
                     </button>
                 </div>
@@ -262,8 +316,11 @@
     </main>
 
     <!-- Application Modal -->
-    <div id="apply-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm hidden" aria-hidden="true">
-        <div class="glass-card p-xl rounded-3xl w-full max-w-lg mx-margin-mobile border border-slate-200/50 shadow-2xl relative">
+    <div id="apply-modal"
+        class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/40 backdrop-blur-sm hidden"
+        aria-hidden="true">
+        <div
+            class="glass-card p-xl rounded-3xl w-full max-w-lg mx-margin-mobile border border-slate-200/50 shadow-2xl relative">
             <button id="close-modal-btn" class="absolute top-lg right-lg text-on-surface-variant hover:text-primary">
                 <span class="material-symbols-outlined">close</span>
             </button>
@@ -272,32 +329,44 @@
 
             <form id="apply-form" class="space-y-md">
                 <div>
-                    <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1" for="apply-name">Full Name</label>
-                    <input type="text" id="apply-name" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-md py-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm"/>
+                    <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1"
+                        for="apply-name">Full Name</label>
+                    <input type="text" id="apply-name" required
+                        class="w-full bg-slate-50 border border-slate-200 rounded-xl px-md py-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm" />
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1" for="apply-email">Email Address</label>
-                    <input type="email" id="apply-email" required class="w-full bg-slate-50 border border-slate-200 rounded-xl px-md py-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm"/>
+                    <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1"
+                        for="apply-email">Email Address</label>
+                    <input type="email" id="apply-email" required
+                        class="w-full bg-slate-50 border border-slate-200 rounded-xl px-md py-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm" />
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1" for="apply-resume">CV Link (Google Drive/Dropbox)</label>
-                    <input type="url" id="apply-resume" required placeholder="https://" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-md py-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm"/>
+                    <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1"
+                        for="apply-resume">CV Link (Google Drive/Dropbox)</label>
+                    <input type="url" id="apply-resume" required placeholder="https://"
+                        class="w-full bg-slate-50 border border-slate-200 rounded-xl px-md py-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm" />
                 </div>
                 <div>
-                    <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1" for="apply-cover">Brief Cover Note</label>
-                    <textarea id="apply-cover" rows="3" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-md py-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm"></textarea>
+                    <label class="block text-xs font-bold text-on-surface uppercase tracking-wider mb-1"
+                        for="apply-cover">Brief Cover Note</label>
+                    <textarea id="apply-cover" rows="3"
+                        class="w-full bg-slate-50 border border-slate-200 rounded-xl px-md py-sm focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 text-body-sm"></textarea>
                 </div>
-                <button type="submit" class="w-full bg-gradient-to-r from-primary to-[#1d4ed8] text-white font-bold py-md rounded-xl transition-all shadow-md hover:scale-[1.02] active:scale-95 accent-glow">
+                <button type="submit"
+                    class="w-full bg-gradient-to-r from-primary to-[#1d4ed8] text-white font-bold py-md rounded-xl transition-all shadow-md hover:scale-[1.02] active:scale-95 accent-glow">
                     Submit Application
                 </button>
             </form>
 
             <!-- Success Overlay inside Modal -->
-            <div id="modal-success" class="absolute inset-0 bg-white/95 rounded-3xl flex flex-col items-center justify-center text-center p-xl hidden">
+            <div id="modal-success"
+                class="absolute inset-0 bg-white/95 rounded-3xl flex flex-col items-center justify-center text-center p-xl hidden">
                 <span class="material-symbols-outlined text-[64px] text-green-500 mb-md">check_circle</span>
                 <h3 class="font-headline-sm text-headline-sm text-on-surface mb-xs font-bold">Application Received!</h3>
-                <p class="text-body-sm text-on-surface-variant max-w-xs mx-auto mb-lg">Thank you. Our recruiters will review your files and contact you shortly.</p>
-                <button id="modal-success-close-btn" class="bg-primary text-white font-semibold px-xl py-sm rounded-xl hover:scale-105 active:scale-95 transition-all text-sm">
+                <p class="text-body-sm text-on-surface-variant max-w-xs mx-auto mb-lg">Thank you. Our recruiters will
+                    review your files and contact you shortly.</p>
+                <button id="modal-success-close-btn"
+                    class="bg-primary text-white font-semibold px-xl py-sm rounded-xl hover:scale-105 active:scale-95 transition-all text-sm">
                     Close
                 </button>
             </div>
@@ -306,50 +375,65 @@
 
     <!-- Footer -->
     <footer id="footer" class="bg-white border-t border-slate-200/60 w-full mt-section">
-        <div class="grid grid-cols-2 md:grid-cols-6 gap-gutter px-margin-mobile md:px-margin-desktop py-xxl w-full max-w-[1440px] mx-auto">
+        <div
+            class="grid grid-cols-2 md:grid-cols-6 gap-gutter px-margin-mobile md:px-margin-desktop py-xxl w-full max-w-[1440px] mx-auto">
             <div class="col-span-2 mb-lg md:mb-0">
                 <div class="flex items-center mb-md">
                     <a href="index.html">
-                        <img src="images/light-bg.png" class="h-20 w-auto block object-contain" style="mix-blend-mode: multiply;" alt="Vernexify Technologies Logo" />
+                        <img src="images/light-bg.png" class="h-20 w-auto block object-contain"
+                            style="mix-blend-mode: multiply;" alt="Vernexify Technologies Logo" />
                     </a>
                 </div>
                 <p class="font-body-sm text-body-sm text-on-surface-variant pr-xl leading-relaxed">
-                    Engineering the next generation of enterprise software solutions with a focus on speed, scale, and digital sophistication.
+                    Engineering the next generation of enterprise software solutions with a focus on speed, scale, and
+                    digital sophistication.
                 </p>
             </div>
             <div>
                 <h5 class="text-primary font-bold mb-md uppercase text-xs tracking-wider">Company</h5>
                 <ul class="space-y-sm font-body-sm text-body-sm text-on-surface-variant">
-                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="about.html">About Us</a></li>
-                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="careers.html">Careers</a></li>
-                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="contact.html">Contact</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary">
+                        <a href="about.html">About Us</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary">
+                        <a href="careers.html">Careers</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary">
+                        <a href="contact.html">Contact</a></li>
                 </ul>
             </div>
             <div>
                 <h5 class="text-primary font-bold mb-md uppercase text-xs tracking-wider">Services</h5>
                 <ul class="space-y-sm font-body-sm text-body-sm text-on-surface-variant">
-                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="services.html">Development</a></li>
-                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="services.html">Design</a></li>
-                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="services.html">AI Solutions</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary">
+                        <a href="services.html">Development</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary">
+                        <a href="services.html">Design</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary">
+                        <a href="services.html">AI Solutions</a></li>
                 </ul>
             </div>
             <div>
                 <h5 class="text-primary font-bold mb-md uppercase text-xs tracking-wider">Resources</h5>
                 <ul class="space-y-sm font-body-sm text-body-sm text-on-surface-variant">
-                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="blog.html">Blog</a></li>
-                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="portfolio.html">Portfolio</a></li>
-                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="guides.html">Guides</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary">
+                        <a href="blog.html">Blog</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary">
+                        <a href="portfolio.html">Portfolio</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary">
+                        <a href="guides.html">Guides</a></li>
                 </ul>
             </div>
             <div>
                 <h5 class="text-primary font-bold mb-md uppercase text-xs tracking-wider">Legal</h5>
                 <ul class="space-y-sm font-body-sm text-body-sm text-on-surface-variant">
-                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="privacy.html">Privacy Policy</a></li>
-                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary"><a href="terms.html">Terms of Use</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary">
+                        <a href="privacy.html">Privacy Policy</a></li>
+                    <li class="hover:translate-x-1 transition-transform duration-200 cursor-pointer hover:text-primary">
+                        <a href="terms.html">Terms of Use</a></li>
                 </ul>
             </div>
         </div>
-        <div class="px-margin-mobile md:px-margin-desktop py-lg border-t border-slate-100 text-center font-body-sm text-body-sm text-on-surface-variant/80 max-w-[1440px] mx-auto">
+        <div
+            class="px-margin-mobile md:px-margin-desktop py-lg border-t border-slate-100 text-center font-body-sm text-body-sm text-on-surface-variant/80 max-w-[1440px] mx-auto">
             © 2026 Vernexify Technologies. All rights reserved.
         </div>
     </footer>
@@ -405,7 +489,7 @@
 
         closeModalBtn.addEventListener('click', hideModal);
         modalSuccessCloseBtn.addEventListener('click', hideModal);
-        
+
         applyModal.addEventListener('click', (e) => {
             if (e.target === applyModal) hideModal();
         });
@@ -426,11 +510,12 @@
                 }
             });
         }, { threshold: 0.1 });
-        
+
         document.querySelectorAll('.glass-card').forEach(card => {
             card.classList.add('opacity-0', 'translate-y-10', 'transition-all', 'duration-700');
             observer.observe(card);
         });
     </script>
 </body>
+
 </html>
